@@ -1,5 +1,3 @@
-Sure! Below is a GitHub-friendly README.md file using Markdown formatting. This version includes all necessary sections while ensuring proper formatting for GitHub rendering.
-
 🍔 Food Classifier with TensorFlow & Keras
 A deep learning model for food image classification using TensorFlow and Keras. The model is trained on the Food-101 dataset and supports additional custom datasets.
 
