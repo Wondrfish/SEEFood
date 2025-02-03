@@ -7,7 +7,7 @@ import os
 # Fix: Use double backslashes (\\) or raw strings (r"")
 train_dir = r"training"
 validation_dir = r"validation"
-test_dir = r"Cevaluation"
+test_dir = r"evaluation"
 
 # Fix: Use `train_dir` and `validation_dir` properly
 train_datagen = ImageDataGenerator(
@@ -46,10 +46,16 @@ model = Sequential([
     Conv2D(64, (3,3), activation='relu'),
     MaxPooling2D(2,2),
 
-    Flatten(),
+    Conv2D(128, (3,3), activation='relu'),
+    MaxPooling2D(2,2),
+
+    Conv2D(256, (3,3), activation='relu'),
+    MaxPooling2D(2,2), 
+
+    GlobalAveragePooling2D(), 
     Dense(128, activation='relu'),
-    Dropout(0.5),
-    Dense(train_generator.num_classes, activation='softmax')
+    Dropout(0.5), 
+    Dense(train_generator.num_classes, activation='softmax') 
 ])
 
 #  Compile Model
@@ -61,7 +67,7 @@ model.summary()
 # Train the Model
 model.fit(
     train_generator,
-    epochs=10,
+    epochs=25,
     validation_data=val_generator
 )
 
