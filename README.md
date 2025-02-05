@@ -23,16 +23,7 @@ Ensure the dataset is structured properly before training:
 
 If using Food-101, ensure an 80-20 train-validation split.
 
-🛠️ Installation
-Step 1: Clone the Repository
-git clone https://github.com/your-username/Food-Classifier.git
-cd Food-Classifier
 
-Step 2: Install Dependencies
-pip install tensorflow numpy matplotlib opencv-python
-
-Step 3: Run the Training Script
-python train.py
 
 
 
@@ -40,7 +31,7 @@ python train.py
 
 ✅ Add More Training Data (e.g., Food-101)
 ✅ Deploy Model as a Web App
-
+TRANSFER LEARNING???
 
 
 ⭐ Like This Project?
