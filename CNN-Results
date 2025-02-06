@@ -1,0 +1,182 @@
+Model: "sequential"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ conv2d (Conv2D)                      │ (None, 222, 222, 32)        │             896 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ max_pooling2d (MaxPooling2D)         │ (None, 111, 111, 32)        │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ conv2d_1 (Conv2D)                    │ (None, 109, 109, 64)        │          18,496 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ max_pooling2d_1 (MaxPooling2D)       │ (None, 54, 54, 64)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ flatten (Flatten)                    │ (None, 186624)              │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense (Dense)                        │ (None, 128)                 │      23,888,000 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 128)                 │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_1 (Dense)                      │ (None, 11)                  │           1,419 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 23,908,811 (91.20 MB)
+ Trainable params: 23,908,811 (91.20 MB)
+ Non-trainable params: 0 (0.00 B)
+C:\Users\ajani\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\trainers\data_adapters\py_dataset_adapter.py:121: UserWarning: Your `PyDataset` class should call `super().__init__(**kwargs)` in its constructor. `**kwargs` can include `workers`, `use_multiprocessing`, `max_queue_size`. Do not pass these arguments to `fit()`, as they will be ignored.
+  self._warn_if_super_not_called()
+Epoch 1/10
+247/247 ━━━━━━━━━━━━━━━━━━━━ 0s 2s/step - accuracy: 0.1657 - loss: 2.9381C:\Users\ajani\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\trainers\data_adapters\py_dataset_adapter.py:121: UserWarning: Your `PyDataset` class should call `super().__init__(**kwargs)` in its constructor. `**kwargs` can include `workers`, `use_multiprocessing`, `max_queue_size`. Do not pass these arguments to `fit()`, as they will be ignored.
+  self._warn_if_super_not_called()
+247/247 ━━━━━━━━━━━━━━━━━━━━ 586s 2s/step - accuracy: 0.1659 - loss: 2.9358 - val_accuracy: 0.2581 - val_loss: 2.1026
+Epoch 2/10
+247/247 ━━━━━━━━━━━━━━━━━━━━ 438s 2s/step - accuracy: 0.2340 - loss: 2.1635 - val_accuracy: 0.2977 - val_loss: 2.0347
+Epoch 3/10
+247/247 ━━━━━━━━━━━━━━━━━━━━ 484s 2s/step - accuracy: 0.2579 - loss: 2.1084 - val_accuracy: 0.2874 - val_loss: 1.9944
+ss: 1.9415 - val_accuracy: 0.3065 - val_loss: 1.8478
+Epoch 8/10
+247/247 ━━━━━━━━━━━━━━━━━━━━ 449s 2s/step - accuracy: 0.3372 - loss: 1.9193 - val_accuracy: 0.3475 - val_loss: 1.8260
+Epoch 9/10
+247/247 ━━━━━━━━━━━━━━━━━━━━ 433s 2s/step - accuracy: 0.3547 - loss: 1.8886 - val_accuracy: 0.3710 - val_loss: 1.7568
+Epoch 10/10
+247/247 ━━━━━━━━━━━━━━━━━━━━ 429s 2s/step - accuracy: 0.3625 - loss: 1.8323 - val_accuracy: 0.3651 - val_loss: 1.7463
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`.
+Model saved successfully!
+PS C:\Users\ajani\OneDrive\Desktop\class>
+                                          python SeeFood.py
+2025-02-03 21:10:37.342375: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-02-03 21:10:40.010266: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Found 7896 images belonging to 11 classes.
+Found 682 images belonging to 11 classes.
+C:\Users\ajani\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\layers\convolutional\base_conv.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+2025-02-03 21:10:44.285447: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model: "sequential"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ conv2d (Conv2D)                      │ (None, 224, 224, 32)        │             896 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization                  │ (None, 224, 224, 32)        │             128 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ activation (Activation)              │ (None, 224, 224, 32)        │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ max_pooling2d (MaxPooling2D)         │ (None, 112, 112, 32)        │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ conv2d_1 (Conv2D)                    │ (None, 112, 112, 64)        │          18,496 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_1                │ (None, 112, 112, 64)        │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ activation_1 (Activation)            │ (None, 112, 112, 64)        │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ max_pooling2d_1 (MaxPooling2D)       │ (None, 56, 56, 64)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ conv2d_2 (Conv2D)                    │ (None, 56, 56, 128)         │          73,856 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_2                │ (None, 56, 56, 128)         │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ activation_2 (Activation)            │ (None, 56, 56, 128)         │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ max_pooling2d_2 (MaxPooling2D)       │ (None, 28, 28, 128)         │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ conv2d_3 (Conv2D)                    │ (None, 26, 26, 256)         │         295,168 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_3                │ (None, 26, 26, 256)         │           1,024 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ max_pooling2d_3 (MaxPooling2D)       │ (None, 13, 13, 256)         │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ conv2d_4 (Conv2D)                    │ (None, 11, 11, 16)          │          36,880 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_4                │ (None, 11, 11, 16)          │              64 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ max_pooling2d_4 (MaxPooling2D)       │ (None, 5, 5, 16)            │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ conv2d_5 (Conv2D)                    │ (None, 3, 3, 8)             │           1,160 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_5                │ (None, 3, 3, 8)             │              32 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ max_pooling2d_5 (MaxPooling2D)       │ (None, 1, 1, 8)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ flatten (Flatten)                    │ (None, 8)                   │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense (Dense)                        │ (None, 128)                 │           1,152 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_6                │ (None, 128)                 │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ activation_3 (Activation)            │ (None, 128)                 │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 128)                 │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_1 (Dense)                      │ (None, 11)                  │           1,419 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 431,555 (1.65 MB)
+ Trainable params: 430,291 (1.64 MB)
+ Non-trainable params: 1,264 (4.94 KB)
+C:\Users\ajani\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\trainers\data_adapters\py_dataset_adapter.py:121: UserWarning: Your `PyDataset` class should call `super().__init__(**kwargs)` in its constructor. `**kwargs` can include `workers`, `use_multiprocessing`, `max_queue_size`. Do not pass these arguments to `fit()`, as they will be ignored.
+  self._warn_if_super_not_called()
+Epoch 1/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 0s 4s/step - accuracy: 0.1616 - loss: 2.4743C:\Users\ajani\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\trainers\data_adapters\py_dataset_adapter.py:121: UserWarning: Your `PyDataset` class should call `super().__init__(**kwargs)` in its constructor. `**kwargs` can include `workers`, `use_multiprocessing`, `max_queue_size`. Do not pass these arguments to `fit()`, as they will be ignored.
+  self._warn_if_super_not_called()
+247/247 ━━━━━━━━━━━━━━━━━━━━ 942s 4s/step - accuracy: 0.1617 - loss: 2.4738 - val_accuracy: 0.1466 - val_loss: 2.5024 - learning_rate: 0.0010
+Epoch 2/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 921s 4s/step - accuracy: 0.2359 - loss: 2.1827 - val_accuracy: 0.1818 - val_loss: 2.4097 - learning_rate: 0.0010
+Epoch 3/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 917s 4s/step - accuracy: 0.2672 - loss: 2.0935 - val_accuracy: 0.2815 - val_loss: 2.0095 - learning_rate: 0.0010
+Epoch 4/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 925s 4s/step - accuracy: 0.2744 - loss: 2.0339 - val_accuracy: 0.3065 - val_loss: 1.9073 - learning_rate: 0.0010
+Epoch 5/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 894s 4s/step - accuracy: 0.2952 - loss: 1.9887 - val_accuracy: 0.3065 - val_loss: 1.9038 - learning_rate: 0.0010
+Epoch 6/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 890s 4s/step - accuracy: 0.3210 - loss: 1.9518 - val_accuracy: 0.3109 - val_loss: 1.9998 - learning_rate: 0.0010
+Epoch 7/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 869s 4s/step - accuracy: 0.3378 - loss: 1.8867 - val_accuracy: 0.3094 - val_loss: 2.0288 - learning_rate: 0.0010
+Epoch 8/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 0s 3s/step - accuracy: 0.3651 - loss: 1.8367   
+Epoch 8: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+247/247 ━━━━━━━━━━━━━━━━━━━━ 843s 3s/step - accuracy: 0.3651 - loss: 1.8367 - val_accuracy: 0.2962 - val_loss: 1.9756 - learning_rate: 0.0010
+Epoch 9/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 821s 3s/step - accuracy: 0.3874 - loss: 1.7536 - val_accuracy: 0.3563 - val_loss: 1.8795 - learning_rate: 5.0000e-04
+Epoch 10/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 883s 4s/step - accuracy: 0.3857 - loss: 1.7346 - val_accuracy: 0.3974 - val_loss: 1.6856 - learning_rate: 5.0000e-04
+Epoch 11/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 870s 4s/step - accuracy: 0.4134 - loss: 1.6909 - val_accuracy: 0.3783 - val_loss: 1.6980 - learning_rate: 5.0000e-04
+Epoch 12/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 864s 3s/step - accuracy: 0.4091 - loss: 1.6775 - val_accuracy: 0.2771 - val_loss: 2.2077 - learning_rate: 5.0000e-04
+Epoch 13/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 0s 3s/step - accuracy: 0.4114 - loss: 1.6561      
+Epoch 13: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+247/247 ━━━━━━━━━━━━━━━━━━━━ 943s 4s/step - accuracy: 0.4115 - loss: 1.6560 - val_accuracy: 0.3372 - val_loss: 1.8872 - learning_rate: 5.0000e-04
+Epoch 14/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 900s 4s/step - accuracy: 0.4380 - loss: 1.6190 - val_accuracy: 0.4355 - val_loss: 1.5939 - learning_rate: 2.5000e-04
+Epoch 15/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 939s 4s/step - accuracy: 0.4531 - loss: 1.5685 - val_accuracy: 0.4311 - val_loss: 1.6095 - learning_rate: 2.5000e-04
+Epoch 16/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 845s 3s/step - accuracy: 0.4678 - loss: 1.5311 - val_accuracy: 0.4179 - val_loss: 1.6811 - learning_rate: 2.5000e-04
+Epoch 17/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 0s 3s/step - accuracy: 0.4688 - loss: 1.5335   
+Epoch 17: ReduceLROnPlateau reducing learning rate to 0.0001250000059371814.
+247/247 ━━━━━━━━━━━━━━━━━━━━ 846s 3s/step - accuracy: 0.4688 - loss: 1.5335 - val_accuracy: 0.4531 - val_loss: 1.5973 - learning_rate: 2.5000e-04
+Epoch 18/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 857s 3s/step - accuracy: 0.4823 - loss: 1.5098 - val_accuracy: 0.4795 - val_loss: 1.5227 - learning_rate: 1.2500e-04
+Epoch 19/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 895s 4s/step - accuracy: 0.4855 - loss: 1.4797 - val_accuracy: 0.4956 - val_loss: 1.4704 - learning_rate: 1.2500e-04
+Epoch 20/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 925s 4s/step - accuracy: 0.4949 - loss: 1.4713 - val_accuracy: 0.5015 - val_loss: 1.4449 - learning_rate: 1.2500e-04
+Epoch 21/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 919s 4s/step - accuracy: 0.4876 - loss: 1.4727 - val_accuracy: 0.4927 - val_loss: 1.4521 - learning_rate: 1.2500e-04
+Epoch 22/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 910s 4s/step - accuracy: 0.4983 - loss: 1.4459 - val_accuracy: 0.4912 - val_loss: 1.4396 - learning_rate: 1.2500e-04
+Epoch 23/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 945s 4s/step - accuracy: 0.5044 - loss: 1.4241 - val_accuracy: 0.4795 - val_loss: 1.4807 - learning_rate: 1.2500e-04
+Epoch 24/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 995s 4s/step - accuracy: 0.5039 - loss: 1.4482 - val_accuracy: 0.5352 - val_loss: 1.4012 - learning_rate: 1.2500e-04
+Epoch 25/25
+247/247 ━━━━━━━━━━━━━━━━━━━━ 890s 4s/step - accuracy: 0.5281 - loss: 1.3965 - val_accuracy: 0.5147 - val_loss: 1.4043 - learning_rate: 1.2500e-04
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`.
+Model saved successfully!
