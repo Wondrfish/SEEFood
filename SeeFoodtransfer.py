@@ -7,9 +7,9 @@ from tensorflow.keras.applications import MobileNetV2
 import os
 
 # Fix: Use double backslashes (\\) or raw strings (r"")
-train_dir = r"C:\Users\ajani\OneDrive\Desktop\food_dataset\FOOD-11\training"
-validation_dir = r"C:\Users\ajani\OneDrive\Desktop\food_dataset\FOOD-11\validation"
-test_dir = r"C:\Users\ajani\OneDrive\Desktop\food_dataset\FOOD-11\evaluation"
+train_dir = r"training"
+validation_dir = r"validation"
+test_dir = r"evaluation"
 
 # Data Augmentation
 train_datagen = ImageDataGenerator(
